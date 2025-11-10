@@ -378,6 +378,19 @@ docker system prune -f
 docker system df
 ```
 
+### Ollama est "unhealthy"
+
+C'est normal si vous venez de démarrer Docker et que les modèles ne sont pas encore téléchargés. Ollama fonctionne quand même !
+
+```bash
+# Vérifier qu'Ollama répond
+curl http://localhost:11434/api/tags
+
+# Si ça retourne {"models":[]}, Ollama fonctionne
+# Téléchargez les modèles avec :
+./scripts/setup-ollama.sh
+```
+
 ## 🎓 Aller Plus Loin
 
 ### Améliorations Possibles

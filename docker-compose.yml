@@ -28,10 +28,11 @@ services:
     volumes:
       - ollama-data:/root/.ollama
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      test: ["CMD", "curl", "-f", "http://localhost:11434/"]
       interval: 30s
       timeout: 10s
       retries: 3
+      start_period: 10s
 
 volumes:
   postgres-data:
