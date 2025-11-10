@@ -68,7 +68,7 @@ Le RAG résout ces problèmes en :
 
 ## 📋 Prérequis
 
-- Java 17 ou supérieur
+- Java 17 ou supérieur (le projet utilise Java 21 via Gradle Toolchain)
 - Docker et Docker Compose
 - Gradle 8.0+ (ou utiliser le wrapper inclus)
 - Git
