@@ -404,12 +404,32 @@ curl http://localhost:11434/api/tags
 7. **Authentification** : Ajouter Spring Security
 8. **Métriques** : Collecter des métriques sur les performances
 
+### 🚀 Version avec LangChain4j
+
+Une **branche alternative** implémente le même système avec [LangChain4j](https://github.com/langchain4j/langchain4j), un framework Java pour l'IA générative :
+
+```bash
+git checkout langchain4j
+```
+
+**Avantages de la branche LangChain4j** :
+- ✅ 40% moins de code
+- ✅ Abstractions de haut niveau
+- ✅ Support multi-providers intégré
+- ✅ Fonctionnalités avancées (agents, mémoire, etc.)
+- ✅ Idéal pour la production
+
+**Utilisez la branche `main`** pour comprendre les concepts
+**Utilisez la branche `langchain4j`** pour la production
+
+Voir [README-LANGCHAIN4J.md](https://github.com/charroux/JavaRAG/tree/langchain4j) pour plus de détails.
+
 ### Ressources
 
 - [Documentation Ollama](https://ollama.ai/)
 - [pgvector](https://github.com/pgvector/pgvector)
 - [Spring AI](https://spring.io/projects/spring-ai)
-- [LangChain4j](https://github.com/langchain4j/langchain4j) - Alternative avec plus de fonctionnalités
+- [LangChain4j](https://github.com/langchain4j/langchain4j) - Framework RAG pour Java
 
 ## 📝 Structure du Projet
 
