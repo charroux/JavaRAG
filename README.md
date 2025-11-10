@@ -289,7 +289,48 @@ Question: Qu'est-ce que Java ?
 Réponse:
 ```
 
-## 🐛 Dépannage
+## � Arrêter le Projet
+
+### Arrêter l'application Spring Boot
+
+Si l'application tourne dans un terminal :
+
+```bash
+# Appuyez sur Ctrl+C dans le terminal où l'application tourne
+```
+
+### Arrêter les services Docker
+
+```bash
+# Arrêter les conteneurs (PostgreSQL et Ollama)
+docker compose stop
+
+# OU arrêter ET supprimer les conteneurs (les données seront conservées)
+docker compose down
+
+# OU arrêter, supprimer les conteneurs ET les volumes (supprime toutes les données)
+docker compose down -v
+```
+
+### Commandes utiles
+
+```bash
+# Voir l'état des conteneurs
+docker compose ps
+
+# Voir les logs
+docker compose logs
+
+# Voir les logs d'un service spécifique
+docker compose logs postgres
+docker compose logs ollama
+
+# Redémarrer un service
+docker compose restart postgres
+docker compose restart ollama
+```
+
+## �🐛 Dépannage
 
 ### Ollama ne démarre pas
 
@@ -298,14 +339,14 @@ Réponse:
 docker logs rag-ollama
 
 # Redémarrer le conteneur
-docker-compose restart ollama
+docker compose restart ollama
 ```
 
 ### L'application ne se connecte pas à PostgreSQL
 
 ```bash
 # Vérifier que PostgreSQL est prêt
-docker-compose ps
+docker compose ps
 
 # Voir les logs
 docker logs rag-postgres
@@ -323,6 +364,18 @@ Si absent, relancez le script de setup :
 
 ```bash
 ./scripts/setup-ollama.sh
+```
+
+### Docker manque d'espace disque
+
+Si vous obtenez "No space left on device" :
+
+```bash
+# Nettoyer les ressources Docker inutilisées
+docker system prune -f
+
+# Voir l'espace utilisé
+docker system df
 ```
 
 ## 🎓 Aller Plus Loin
